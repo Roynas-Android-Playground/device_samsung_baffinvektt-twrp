@@ -1,10 +1,10 @@
-/efs          ext4     /dev/block/mmcblk0p3      flags=backup=1
+/efs          ext4     /dev/block/mmcblk0p3      flags=backup=1;display=EFS
 /boot         emmc     /dev/block/mmcblk0p5      flags=flashimg=1
 /recovery     emmc     /dev/block/mmcblk0p6      flags=flashimg=1
 /cache        ext4     /dev/block/mmcblk0p8      flags=wipeingui
-/system       ext4     /dev/block/mmcblk0p9      flags=wipeingui
+/system       ext4     /dev/block/mmcblk0p9      flags=wipeingui;flashimg=1
 /data         ext4     /dev/block/mmcblk0p12
-/preload      ext4     /dev/block/mmcblk0p10     flags=wipeingui
+/preload      ext4     /dev/block/mmcblk0p10     flags=wipeingui;display=Preload
 /modem        emmc     /dev/block/mmcblk0p7      flags=backup=1
 
 # SD Card and OTG
