@@ -1,9 +1,12 @@
-/efs          ext4     /dev/block/mmcblk0p3      flags=display=efs
-/boot         emmc     /dev/block/mmcblk0p5      flags=display=boot
-/recovery     emmc     /dev/block/mmcblk0p6      flags=display=recovery
-/cache        ext4     /dev/block/mmcblk0p8      flags=display=cache
-/system       ext4     /dev/block/mmcblk0p9      flags=display=system
-/data         ext4     /dev/block/mmcblk0p12     flags=display=data
-/preload      ext4     /dev/block/mmcblk0p10     flags=display=preload
-/sdcard       vfat     /dev/block/mmcblk1p1      flags=display=sdcard
-/modem        emmc     /dev/block/mmcblk0p7      flags=display=modem
+/efs          ext4     /dev/block/mmcblk0p3      flags=backup=1
+/boot         emmc     /dev/block/mmcblk0p5      flags=flashimg=1
+/recovery     emmc     /dev/block/mmcblk0p6      flags=flashimg=1
+/cache        ext4     /dev/block/mmcblk0p8      flags=wipeingui
+/system       ext4     /dev/block/mmcblk0p9      flags=wipeingui
+/data         ext4     /dev/block/mmcblk0p12
+/preload      ext4     /dev/block/mmcblk0p10     flags=wipeingui
+/modem        emmc     /dev/block/mmcblk0p7      flags=backup=1
+
+# SD Card and OTG
+/external_sd	auto	/dev/block/mmcblk1p1 /dev/block/mmcblk1	flags=display="Micro SD Card";storage;wipeingui;removable
+/usb-otg	auto	/dev/block/sda1 /dev/block/sda	flags=display="USB-OTG";storage;wipeingui;removable
